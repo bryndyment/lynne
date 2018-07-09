@@ -1,0 +1,19 @@
+% if ( $ext eq 'html' ) {
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- site implementation by Hoo Logic -->
+% }
+<% $m->call_next %>\
+<%init>
+	my ( $ext );
+
+	$ENV{ SCRIPT_FILENAME } =~ /^(?:C:)?\/.*\/(.*)\.(.+)$/;
+	$r->content_type( 'text/' . ( ( ( $ext = $2 ) eq 'js' ) ? 'javascript' : $ext ) . '; charset=utf-8' );
+	if ( $ext eq 'html' ) {
+		$r->no_cache( 1 );
+		}
+	else {
+		$r->headers_out->{ 'Cache-Control' } = 'max-age=86400';
+		}
+
+	Hoo::SetMasonRequestObject( $m );
+</%init>

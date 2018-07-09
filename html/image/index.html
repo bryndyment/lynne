@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- site implementation by Hoo Logic -->
+<html>
+	<head>
+		<link href="/css/" rel="stylesheet" type="text/css">
+		<meta http-equiv="imagetoolbar" content="no">
+		<script src="/js/" type="text/javascript"></script>
+		<style type="text/css">
+			body { margin: 0px; padding: 0px; }
+		</style>
+		<title>lynne - <% $alt %></title>
+	</head>
+	<body>
+		<div><img alt="<% $alt %>" height="<% $portrait ? 600 : 450 %>" src="/i/600/<% $id %>.jpg" width="<% $portrait ? 450 : 600 %>"></div>
+	</body>
+</html>\
+<%args>
+	$alt => undef
+	$id => undef
+	$portrait => undef
+</%args>
