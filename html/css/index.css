@@ -47,16 +47,3 @@ ul { list-style-type: none; }
 #nav-hint a { color: #999; text-decoration: underline !important; }
 #paging a { color: #666; }
 #paging span { color: #b6cbf3; margin: 0 16px; }
-
-% if ( $uaH->{ ie5w } ) {
-
-
-/* IE5W */
-body { text-align: center; }
-#all { text-align: left; }
-% }
-<%init>
-	my ( $uaH );
-
-	$uaH = Hoo::Util::UserAgent( $ENV{ HTTP_USER_AGENT } );
-</%init>
